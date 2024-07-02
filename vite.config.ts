@@ -10,6 +10,11 @@ import postCssPresetEnv from 'postcss-preset-env'
 export default defineConfig({
   plugins: [vue()],
   css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "@/assets/base.scss";`
+      }
+    },
     postcss: {
       plugins: [autoprefixer({}), postCssPresetEnv({})]
     }
